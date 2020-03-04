@@ -1,0 +1,84 @@
+package br.lasalle.oop.trab1;
+
+public class SuaClasseTester {
+
+	public static void main(String[] args) {
+		// criando conta
+		Conta minhaConta;
+		minhaConta = new Conta();
+		
+		ContaEspecial minhaContaesp;
+		minhaContaesp = new ContaEspecial();
+		
+		// alterando os valores de minhaConta
+		minhaConta.nome = "Dyu";
+		minhaConta.saldo = 1000;
+		
+		minhaConta.sacar(50);
+		
+		 System.out.println("Saldo atual: " + minhaConta.saldo);
+		
+		//caso queira depositar 50 reais
+		//minhaConta.depositar(50);
+		
+		 minhaContaesp.ativar();
+		 
+		 //caso queira desativar conta especial
+		 //minhaConta.desativar
+	}
+
+}
+
+package br.lasalle.oop.trab1;
+
+public class Conta {
+
+		int numero;
+		double saldo;
+		double limite;
+		String nome;
+
+
+		
+	void sacar(double valorsc) {
+		valorsc = 50;
+	double novoSaldo = this.saldo - valorsc; 
+	 this.saldo = novoSaldo;
+		                    }
+	
+	void depositar(double valordp) {
+		double novoSaldo = this.saldo + valordp; 
+		 this.saldo = novoSaldo;
+			                    }
+
+
+}
+
+package br.lasalle.oop.trab1;
+
+public class ContaEspecial {
+
+	boolean ativacao;
+	double valcredito;
+	double valcheque;
+	
+	
+	
+	void ativar()
+	{
+		ativacao = true;
+		
+		System.out.println("Conta especial ativada !! ");
+	}
+
+
+	void desativar()
+	{
+		ativacao = false;
+		
+		System.out.println("Conta normal");	
+	}
+
+
+}
+
